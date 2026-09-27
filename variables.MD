@@ -1,4 +1,4 @@
-*Variables in Shell script
+*# Variables in Shell script
 In shell scripting, variables store data that you can use and manipulate throughout your script.
 #Passing variables
 1. Inside the script
@@ -14,7 +14,7 @@ echo "$NAME2: Hi $NAME1, i am fine"
 echo "$NAME1: what are you doing?"
 echo "$NAME2: I am learning DevOps"
 
-** 2. Passed through aurmuments
+2. Passed through aurmuments
 #!/bin/bash
 NAME1=$1
 NAME2=$2
