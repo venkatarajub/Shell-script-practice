@@ -26,3 +26,12 @@ echo "$NAME2: I am learning DevOps"
 
 Variables passed as aruguments
 sh file-name venkat raju
+
+## 3. Passed at run time
+#!/bin/bash
+echo "Please enter your username: "
+read -s USERNAME    #if your not used the "-s" entered username will displayed in the terminal
+echo "entered username is $USERNAME"
+echo "Please enter the password: "
+read -s PASSWD
+echo "Entered Password is $PASSWD"
