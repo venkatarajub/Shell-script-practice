@@ -14,7 +14,7 @@ echo "$NAME2: Hi $NAME1, i am fine"
 echo "$NAME1: what are you doing?"
 echo "$NAME2: I am learning DevOps"
 
-##2. Passed through aurmuments
+** 2. Passed through aurmuments
 #!/bin/bash
 NAME1=$1
 NAME2=$2
