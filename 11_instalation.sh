@@ -1,10 +1,9 @@
 #!/bin/bash
 
-#ID=$(id)
+USERID=$(id -u)
 
-if [ $EUID -ne 0 ]
+if [ $USERID -ne 0 ]
 then
-    echo "User is not having root access get the root access"
-else
-    dnf install mysql -y
+    echo "User is not having the root access, run the script with root access"
 fi
+dfn list installed mysql
