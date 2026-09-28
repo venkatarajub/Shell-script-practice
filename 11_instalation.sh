@@ -4,7 +4,7 @@
 
 if [ $EUID -ne 0 ]
 then
-    echo "User is not having root access"
+    echo "User is not having root access get the root access"
 else
-    echo "User is having root access"
+    dnf install mysql -y
 fi
