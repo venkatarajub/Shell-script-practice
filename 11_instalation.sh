@@ -8,17 +8,16 @@ then
     exit 1
 fi
 dfn list installed mysql
-if [ $? eq 0 ]
+if [ $? -ne 0 ]
 then
-    echo "Mysql already installed nothing to do"
-else 
     echo "My SQL not installed.. loading instalation"
     dnf install mysql -y
-    if [ $? eq 0 ]
+    if [ $? -ne 0 ]
     then
-        echo "Mysql Successfully installed"
-    else
         echo "Mysql not instlled pls check"
-        exit 1
+        exit 1        
+    else
+        echo "Mysql Successfully installed"        
     fi
+    echo "Mysql already installed nothing to do"
 fi
