@@ -1,10 +1,10 @@
 #!/bin/bash
 
-ID=$(id)
+#ID=$(id)
 
-if [ $ID eq 0 ]
+if [ $EUID -ne 0 ]
 then
-    echo "User is having root access"
-else
     echo "User is not having root access"
+else
+    echo "User is having root access"
 fi
