@@ -6,9 +6,12 @@ In shell scripting, variables store data that you can use and manipulate through
 3. Passed at runtime
 
 ## 1. Inside the script
+
 #!/bin/bash
+
 NAME1=Ramesh
 NAME2=Suresh
+
 echo "$NAME1: Hi $NAME2 How are you?"
 echo "$NAME2: Hi $NAME1, i am fine"
 echo "$NAME1: what are you doing?"
