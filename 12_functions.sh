@@ -17,23 +17,23 @@ then
     exit 1
 fi
 
-dnf list installed mysqll
+dnf list installed mysql
 
 if [ $? -ne 0 ]
 then
     echo "Mysql not instllaed. going to install"
-    dnf install mysqlt -y
+    dnf install mysql -y
     VALIDATE
 else
     echo "MYSQL already installed, nothing to do"
 fi
 
-dnf list installed gitt
+dnf list installed git
 
 if [ $? -ne 0 ]
 then
     echo "git not instllaed. going to install"
-    dnf install gitt -y
+    dnf install git -y
     VALIDATE
 else
     echo "git already installed, nothing to do"
