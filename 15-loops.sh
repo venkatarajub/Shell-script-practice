@@ -9,24 +9,28 @@ CHECK_ROOT(){
         exit 1
     fi
 }
+VALIDATE(){
+    if [ $? -ne 0 ]
+    then
+        echo "$package not installed. pls check"
+        exit 1
+    else
+        echo "$package successfully installed"
+    fi
+
+}
 CHECK_ROOT
 
-# for package in $@
-# do
-#     dnf list installed $package
-#     if [ $? -ne 0 ]
-#     then
-#         echo "$package not installed, going to install"
-#         dnf install $package -y
-#         if [ $? -ne 0 ]
-#         then
-#             echo "$package not installed. pls check"
-#             exit 1
-#         else
-#         echo "$package successfully installed"
-#         fi
-#     else
-#         echo "$package already isnstalled. nothing to do"
-#     fi
-# done
+for package in $@
+do
+    dnf list installed $package
+    if [ $? -ne 0 ]
+    then
+        echo "$package not installed, going to install"
+        dnf install $package -y
+        VALIDATE
+    else
+        echo "$package already isnstalled. nothing to do"
+    fi
+done
 
