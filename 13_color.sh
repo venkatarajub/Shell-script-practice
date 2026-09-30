@@ -26,8 +26,9 @@ then
         echo -e "$R installation failed $N, please check"
         exit 1
     else
-        echo -e $G Mysql successfully installed $N 
-
+        echo -e $G Mysql successfully installed $N
+    fi
 else
     echo -e "$G mysql already installed $N $Y nothing to do $N"
+fi
 
