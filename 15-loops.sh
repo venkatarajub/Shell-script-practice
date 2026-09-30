@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #install multiple packages
-USERID=(id -u)
+USERID=$(id -u)
 CHECK_ROOT(){    
     if [ $USERID -ne 0 ]
     then
@@ -9,7 +9,6 @@ CHECK_ROOT(){
         exit 1
     fi
 }
-
 CHECK_ROOT
 
 # for package in $@
