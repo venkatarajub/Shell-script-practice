@@ -22,7 +22,6 @@ VALIDATE(){
     else
         echo -e "$2 $G successfully installed $N"
     fi
-
 }
 CHECK_ROOT
 
@@ -39,3 +38,7 @@ do
     fi
 done
 
+#VALIDATE $? "install $package"
+#VALIDATE = VALIDATE
+#$? = $1
+#intall $package = $2
