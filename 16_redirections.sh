@@ -21,6 +21,8 @@ VALIDATE(){
         echo -e "$2 is $G SUCCESS $N"
     fi
 }
+CHECK_ROOT
+
 for package in $@
 do
     dnf list installed $package
