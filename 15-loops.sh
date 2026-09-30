@@ -15,12 +15,12 @@ CHECK_ROOT(){
     fi
 }
 VALIDATE(){
-    if [ $? -ne 0 ]
+    if [ $1 -ne 0 ]
     then
-        echo -e "$package $R not installed $N. pls check"
+        echo -e "$2 $R not installed $N. pls check"
         exit 1
     else
-        echo -e "$package $G successfully installed $N"
+        echo -e "$2 $G successfully installed $N"
     fi
 
 }
@@ -33,7 +33,7 @@ do
     then
         echo -e $Y "$package not installed, going to install $N"
         dnf install $package -y
-        VALIDATE
+        VALIDATE $? "install $package"
     else
         echo -e "$package $G already isnstalled $N. nothing to do"
     fi
