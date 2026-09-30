@@ -5,7 +5,7 @@
 #     echo $i
 # done
 
-for ((i=0 i<5; i++))
+for ((i=0; i<5; i++))
 do
     echo $i
 done
