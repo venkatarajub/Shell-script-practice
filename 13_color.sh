@@ -16,11 +16,10 @@ fi
 
 #check package installed or not
 dnf list installed mysql
-if [ $? - ne 0 ]
+if [ $? -ne 0 ]
 then 
     echo -e mysql not installed.. going to $Y install $N
     dnf install mysql -y
-    #check isntalation success are not
     if [ $? -ne 0 ]
     then 
         echo -e "$R installation failed $N, please check"
