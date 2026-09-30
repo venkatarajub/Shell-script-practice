@@ -8,7 +8,7 @@ N="\e[0m"
 #checke user is having root access or not
 USERID=$(id -u)
 
-if ( $USERID -ne 0 )
+if [ $USERID -ne 0 ]
 then
     echo -e "$Y run the script with roor access"
     exit 1
