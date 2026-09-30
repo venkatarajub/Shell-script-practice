@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #install multiple packages
-CHECK_ROOT(){
-    USERID=(id -u)
+USERID=(id -u)
+CHECK_ROOT(){    
     if [ $USERID -ne 0 ]
     then
         echo "Run the screipt with root access"
