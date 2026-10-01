@@ -18,7 +18,7 @@ CHECK_ROOT(){
 }
 
 VALIDATE(){
-    if [ $1 - ne 0 ]
+    if [ $1 -ne 0 ]
     then
         echo -e "$2 is $R FAILED $N"
         exit 1
@@ -34,7 +34,7 @@ do
     if [ $? -ne 0 ]
     then
         echo "$package is not installed, going to install it.." >>$LOG_FILE
-        dnf install $package -y
+        dnf install $package -y >>$LOG_FILE
         VALIDATE $? "Installing $package" >>$LOG_FILE
     else
         echo -e "$Y $package is already installed..nothing to do $N"
