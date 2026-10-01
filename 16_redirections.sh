@@ -3,11 +3,16 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
+LOG_FOLDER="/var/log/shell_script"
+mkdir -p $LOG_FLODER
+SCRIPT_NAME="echo $0 | cut -d "." f1"
+DATE=$(date +Y%-%m-%d-%H-%M-%s)
+LOG_FILE="$LOG_FLODER/$SCRIPT_NAME-$DATE"
 
 CHECK_ROOT(){
     if [ $USERID -ne 0 ]
     then 
-        echo -e "$Y Run the script with root access $N"
+        echo -e "$Y Run the script with root access $N" >>$LOG_FILE
         exit 1
     fi
 }
@@ -28,9 +33,9 @@ do
     dnf list installed $package
     if [ $? -ne 0 ]
     then
-        echo "$package is not installed, going to install it.."
+        echo "$package is not installed, going to install it.." >>$LOG_FILE
         dnf install $package -y
-        VALIDATE $? "Installing $package"
+        VALIDATE $? "Installing $package" >>$LOG_FILE
     else
         echo -e "$Y $package is already installed..nothing to do $N"
     fi
