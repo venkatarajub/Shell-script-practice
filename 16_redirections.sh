@@ -32,8 +32,15 @@ VALIDATE(){
 }
 
 CHECK_ROOT
-dnf list installed $1
-VALIDATE $? "listing $1" | tee - a $LOG_FILE
-dnf install $1 -y >> $LOG_FILE
-VALIDATE $? "$1 installation"
 
+for package in $@
+do
+    dnf list installed $package
+    if [ $? -ne 0 ]
+    then
+        echo -e "$R $package not installed..$N going to install"
+        dnf install $package -y
+        VALIDATE $? "Install $package"
+    else
+        echo -e "$G $package already installed. $N Nothing to do"
+    fi
