@@ -44,3 +44,4 @@ do
     else
         echo -e "$G $package already installed. $N Nothing to do"
     fi
+done
