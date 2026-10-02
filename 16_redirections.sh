@@ -33,7 +33,7 @@ VALIDATE(){
 
 CHECK_ROOT
 dnf list installed $1
-VALIDATE $? "listing mysql" | tee - a $LOG_FILE
+VALIDATE $? "listing $1" | tee - a $LOG_FILE
 dnf install $1 -y >> $LOG_FILE
 VALIDATE $? "$1 installation"
 
