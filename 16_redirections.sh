@@ -34,12 +34,6 @@ VALIDATE(){
 CHECK_ROOT
 dnf list installed $1
 VALIDATE $? "listing mysql" | tee - a $LOG_FILE
-if [ $? -ne 0 ]
-then
-    dnf install $1 -y >> $LOG_FILE
-    VALIDATE $? "$1 successfully installed"
-else
-    echo -e "$G $ already installed $N. Nothing to do" | tee -a $LOG_FILE
-fi
-
+dnf install $1 -y >> $LOG_FILE
+VALIDATE $? "$1 installation"
 
