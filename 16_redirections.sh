@@ -21,5 +21,18 @@ CHECK_ROOT(){
     fi
 }
 
+VALIDATE(){
+    if [ $1 -ne 0 ]
+    then
+        echo -e "$R $2 execution was failed $N. Pls check" | tea -a $LOG_FILE
+        exit 1
+    else
+        echo -e "$G $2 executed successfully $N" >> $LOG_FILE
+    fi
+}
+
 CHECK_ROOT
+dnf list installed mysql
+VALIDATE $? "listing mysql" | tea - a $LOG_FILE
+
 
