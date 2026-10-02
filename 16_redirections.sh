@@ -24,7 +24,7 @@ CHECK_ROOT(){
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo -e "$R $2 execution was failed $N. Pls check" | tea -a $LOG_FILE
+        echo -e "$R $2 execution was failed $N. Pls check" | tee -a $LOG_FILE
         exit 1
     else
         echo -e "$G $2 executed successfully $N" >> $LOG_FILE
@@ -32,7 +32,7 @@ VALIDATE(){
 }
 
 CHECK_ROOT
-dnf list installed mysql
-VALIDATE $? "listing mysql" | tea - a $LOG_FILE
+dnf list installed $1
+VALIDATE $? "listing mysql" | tee - a $LOG_FILE
 
 
