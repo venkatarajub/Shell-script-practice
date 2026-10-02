@@ -17,7 +17,7 @@ CHECK_ROOT(){
         echo -e "$Y Run the script with root access $N" >> $LOG_FILE
         exit 1
     else
-        echo -e "$G User is having root access $N" >> $LOG_FILE
+        echo -e "$G User is having root access $N" | tee -a $LOG_FILE
     fi
 }
 
