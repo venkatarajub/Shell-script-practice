@@ -43,4 +43,4 @@ do
         VALIDATE $? "Install $package"
     else
         echo -e "$G $package already installed. $N Nothing to do"
-    fi
+    
