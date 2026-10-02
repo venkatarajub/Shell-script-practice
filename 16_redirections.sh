@@ -11,3 +11,13 @@ LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME-$TIMESTAMP.log"
 mkdir -p $LOGS_FOLDER
 USERID=$(id -u)
 
+CHECK_ROOT(){
+    if [ $USERID -ne 0 ]
+    then 
+        echo -e "$Y Run the script with root access $N" >> $LOG_FILE
+        exit 1
+    fi
+}
+
+CHECK_ROOT
+
